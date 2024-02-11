@@ -1,16 +1,30 @@
 gen_data['necromancer'] = [
-    'Your <strong>focus</strong> is {a} [focus].'
+    '<p>{background}</p>
 ]
+gen_data['background'] = [
+    'You are a criminal from {homeworld}. You were going to {criminal_motivation} but {voice}. Then you heard the voice...',
+    'You are a diplomat from {homeworld}. You were on your way to {diplomat_motivation} but {voice}. Then you heard the voice...',
+    'You are a junker from {homeworld}. You were planning to {junker_motivation} but {voice}. Then you heard the voice...',
+    'You are a mercenary from {}{mercenary}',
+    '{merchant}',
+    '{miner}',
+    '{pilgrim}',
+    '{scientist}',
+    '{surveyor}',
+    '{teamster}'
+]
+
+gen_data['criminal']
 
 gen_data['homeworld'] = {
     '1': 'Maono',
     '2-3': 'Almasi',
-    Jangwa
-    Msituni ^2
-    Barafu
-    Nyumbani ^3
-    Mwewe
-    Kivuli
+    '4': 'Jangwa',
+    '5-6': 'Msituni',
+    '7': 'Barafu',
+    '8-10': 'Nyumbani',
+    '11': 'Mwewe',
+    '12': 'Kivuli'
 }
 
 gen_data['voice'] = [

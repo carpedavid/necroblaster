@@ -1,0 +1,270 @@
+pageTitle = Necroblaster
+
+dice = {import:dice-plugin}
+firstName = {import:common-first-name}
+lastName = {import:common-last-name}
+createInstance = {import:create-instance-plugin}
+
+button
+  Feed to the maw
+  Harvest for spare parts
+  Entomb forever
+  Practice fleshcrafting
+  Kill, then enthrall
+  Send to the Negaverse
+
+character
+  str = [dice("3d6")]
+  dex = [dice("3d6")]
+  ctrl = [dice("3d6")]
+  credits = [dice("3d6") * 100]
+  hp = [dice("1d6")]
+  age = [dice("2d20") + 16]
+  savesOutput = STR [this.str], DEX [this.dex], CTRL [this.ctrl]
+  statsOutput = HP [this.hp], Armor [b = background.selectOne, b.armor], Stability [b.stability]
+  backgroundOutput = You are {a} <strong>[b.getName]</strong> from [homeworld]. [b.preText] [b.motivation] but [voice]. Then you heard the voice...
+  creditsOutput = You have <strong>[this.credits]</strong> credits and
+  gearOutput = [b.gear]
+  appearanceOutput = [cyberware] and [enhancements]
+  personalityOutput
+    [openness]
+    [conscientiousness]
+    [extraversion]
+    [agreeableness]
+    [stability]
+    $output = [this.joinItems(", ")]
+  focusOutput = Your <strong>focus</strong> is {a} [focus].
+
+background
+  criminal
+    preText = You were going to
+    gear = <li>a disassembly ray <em>(d6 blast damage, bulky, breech)</em></li><li>a secure enclave</li><li>a vacuum suit w/ therm-optic camouflage</li>
+    armor = 0
+    stability = 0
+    motivation
+      deliver a shipment of stolen goods
+      collect protection payments
+      run a gambling ring
+      pick up a shipment of illegal drugs
+      train new recruits
+      break some kneecaps
+  diplomat
+    preText = You were on your way to
+    gear = <li>a defense shield</li><li>a plasma knife <em>(d6 damage)</em></li><li>a universal translator</li>
+    armor = 1
+    stability = 0
+    motivation
+      negotiate a treaty between regional powers
+      review the terms of a trade agreement
+      deliver a gift to an allied power
+      exchange prisoners with a rival power
+      speak at a diplomatic summit
+      visit an ambassador
+  junker
+    preText = You were planning to
+    gear = <li>a hazard suit</li><li>an inertial blaster <em>(DEX save or stunned)</em></li><li>a matter condenser</li>
+    armor = 1
+    stability = 0
+    motivation
+      harvest cocoons from bio-engineered silkworms
+      reclaim fuel cells from a dormant terraforming facility
+      retrieve a lost cache of anti-venom
+      strip parts from exosuits left on an old battlefield
+      extract blackrock from an abandoned mine
+      recover the neural network from a derelict cargo vessel
+  mercenary
+    preText = You were contracted to
+    gear = <li>inertial armor</li><li>nanochems x6</li><li>a proton rifle <em>(d8 damage, bulky)</em></li>
+    armor = 2
+    stability = 0
+    motivation
+      quell a rebellion in a newly established community
+      provide security for a very important person
+      train the troops of a developing nation
+      protect a mining expedition from dangerous threats
+      provide humanitarian assistance after a natural disaster
+      enforce a cease-fire between two hostile forces
+  merchant
+    preText = You were trying to
+    gear = <li>a matter condenser</li><li>a defense shield</li><li>a plasma knife <em>(d6 damage)</em></li>
+    armor = 1
+    stability = 0
+    motivation
+      buy a swarm of used nanobots
+      sell a pair of overly chatty, refurbished construction robots
+      deliver a load of fuel to a stranded spacecraft
+      sell food and water to a recently established community
+      deliver medicine to treat a deadly pandemic
+      buy a crate of semi-legal weapons
+  miner
+    preText = You had a job to extract
+    gear = <li>a geoscanner</li><li>a hazard suit</li><li>a mining tool <em>(d6 damage, breech)</em></li>
+    armor = 1
+    stability = 0
+    motivation
+      blackrock from the fossilized juggernauts of Kivuli
+      hematite from the Red Mountains of Jangwa
+      fruiting bodies in the mycelial belt
+      titanium to build spaceships in the asteroid belt
+      ice to produce fresh water on Barafu
+      hydrocarbons on Malaika
+  pilgrim
+    preText = You were on your way to
+    gear = <li>an article of faith</li><li>a vacuum suit</li><li>a plasma knife <em>(d6 damage)</em></li>
+    armor = 0
+    stability = 1
+    motivation
+      contemplate your sorrow at the Crimson Monoliths
+      inhale the divine spores of the Mycelial Belt
+      circumambulate the Tower of Eyes
+      have your code blessed at the Temple of the Great Architect
+      bathe in the sulfurous waters of the Black Springs
+      attend the recitation of the Stellar Sutras
+  scientist
+    preText = You were attempting to
+    gear = <li>a bio scanner</li><li>a laser scalpel <em>(d6 damage, small)</em></li><li>a vacuum suit</li>
+    armor = 0
+    stability = 0
+    motivation
+      research a new species
+      lead an engineering project
+      develop a biological enhancement
+      translate a new language
+      test a nanotech device
+      investigate a cosmic anomaly
+  surveyor
+    preText = You were en route to
+    gear = <li>a hazard suit</li><li>a reconnaissance drone</li><li>a stun baton <em>(d4 damage, STR save or stunned)</em></li>
+    armor = 1
+    stability = 0
+    motivation
+      assess the repairability of a salvage site
+      measure the boundaries of a construction site
+      assess the mining potential of an asteroid
+      adjudicate a dispute in a recently settled area
+      map a trade route in a hostile area
+      scout ideal locations for terraforming equipment
+  teamster
+    preText = You were on your way to
+    gear = <li>an exoskeleton</li><li>a plasma knife <em>(d6 damage)</em></li><li>a vacuum suit</li>
+    armor = 0
+    stability = 0
+    motivation
+      take your last vacation before you hit 30 years and retire
+      haul a tanker of water from Barafu to Kivuli
+      move a load of antimatter between Mwewe and Barafu
+      start a new job as a dock worker on Maono
+      work the underwater ports of Msituni
+      attend a union meeting on Nyumbani
+
+homeworld
+  Maono
+  Almasi ^2
+  Jangwa
+  Msituni ^2
+  Barafu
+  Nyumbani ^3
+  Mwewe
+  Kivuli
+
+voice
+  you were physically attacked
+  your loved one suddenly passed away
+  you witnessed an unspeakable act of violence
+  you contracted a debilitating illness
+  your most closely held secret was publicly revealed
+  your financial accounts were hacked
+
+cyberware
+  telescopic irises
+  illuminated skin
+  mechanical limb
+  titanium exoskeleton
+  storage hatches
+  mounting points
+
+enhancements
+  limb graft
+  melanin/chlorophyl replacement
+  prehensile tail
+  bioluminescent hair
+  horns
+  fungal skin infusion
+
+openness
+  close-minded
+  rigid
+  knowledgable
+  curious
+  artistic
+  adventurous
+  
+conscientiousness
+  irresponsible
+  disorganized
+  effective
+  reliable
+  careful
+  serious
+  
+extraversion
+  solitary
+  reserved
+  sociable
+  energetic
+  assertive
+  gregarious
+  
+agreeableness
+  manipulative
+  callous
+  gruff
+  polite
+  thoughtful
+  generous
+  
+stability
+  volatile
+  jumpy
+  pessimistic
+  optimistic
+  resilient
+  carefree
+
+focus
+  length of rope, frayed and broken
+  straight razor, stained with blood
+  empty bottle of pills
+  bullet casing, slightly warm to the touch
+  keycard that grants access to the roof of a tall building
+  train ticket, unused
+  rat skull that squeaks happily when held
+  shark’s tooth that smells of the sea
+  dog collar that floats around excitedly if left unattended
+  rabbit’s foot that twitches occasionally
+  horse shoe, well worn
+  feather that is immune to gravity
+  hologram of someone you know very well
+  locket engraved with the initials of someone you’ve never met
+  book of poems, well-read
+  hymnal in mint condition
+  bottle of perfume, half used
+  satchel filled with floral potpourri
+  wooden animal, hand-carved
+  child’s doll, hand-sewn
+  porcelain figurine of a dancer
+  bronze statuette of a hunter
+  crystal pendant of a bird
+  figurine of an unknown animal, carved from bone
+  pocket watch that is perpetually wound
+  fountain pen filled with blood red ink
+  lighter that is eternally fueled
+  notebook, black
+  pocket knife, sharp
+  paperweight in the form of an onyx pyramid
+  trumpet that only plays jazz
+  pair of headphones with kickin’ bass
+  guitar, tuned perfectly
+  golden violin
+  drum made from skin of dubious provenance
+  harmonica that plays itself

@@ -1,0 +1,20 @@
+<div class="header">
+  <p class="title">Necroblaster</p>
+  <p class="subtitle">A character creator for This Mortal Coil</p>
+  <button onclick="update()" class="rand-button">[button]</button>
+</div>
+<div class="wrap">
+
+  <h1>[c = createInstance(character), ""][firstName] [lastName]</h1>
+  <p>[c.statsOutput]</p>
+  <p>[c.savesOutput]</p>
+  <ul>
+    <li>[c.age] years old</li>
+    <li>[c.personalityOutput.sentenceCase]</li>
+    <li>[c.appearanceOutput.sentenceCase]</li>
+  </ul>
+  <p>[c.backgroundOutput]</p>
+  <p>[c.focusOutput]</p>
+  <p>[c.creditsOutput]</p>
+  <ul>[c.gearOutput]</ul>
+</div>

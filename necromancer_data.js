@@ -1,20 +1,109 @@
-gen_data['necromancer'] = [
-    '<p>{background}</p>'
+gen_data['character'] = [
+    '<p>You are a {background} but {voice}. Then you heard the voice...</p>',
+    '<p>Your focus is {focus}.</p>'
 ]
 gen_data['background'] = [
-    'You are a criminal from {homeworld}. You were going to {criminal_motivation} but {voice}. Then you heard the voice...',
-    'You are a diplomat from {homeworld}. You were on your way to {diplomat_motivation} but {voice}. Then you heard the voice...',
-    'You are a junker from {homeworld}. You were planning to {junker_motivation} but {voice}. Then you heard the voice...',
-    'You are a mercenary from {}{mercenary}',
-    '{merchant}',
-    '{miner}',
-    '{pilgrim}',
-    '{scientist}',
-    '{surveyor}',
-    '{teamster}'
+    'criminal from {homeworld}. You were going to {criminal_motivation}',
+    'diplomat from {homeworld}. You were on your way to {diplomat_motivation}',
+    'junker from {homeworld}. You were planning to {junker_motivation}',
+    'mercenary from {homeworld}. You were contracted to {mercenary_motivation}',
+    'merchant from {homeworld}. You were trying to {merchant_motivation}',
+    'miner from {homeworld}. You had a job to extract {miner_motivation}',
+    'pilgrim from {homeworld}. You were on your way to {pilgrim_motivation}',
+    'scientist from {homeworld}. You were attempting to {scientist_motivation}',
+    'surveyor from {homeworld}. You were en route to {surveyor_motivation}',
+    'teamster from {homeworld}. You were on your way to {teamster_motivation}'
 ]
 
-gen_data['criminal']
+gen_data['criminal_motivation'] = [
+    'deliver a shipment of stolen goods',
+    'collect protection payments',
+    'run a gambling ring',
+    'pick up a shipment of illegal drugs',
+    'train new recruits',
+    'break some kneecaps'
+]
+
+gen_data['diplomat_motivation'] = [
+    'negotiate a treaty between regional powers',
+    'review the terms of a trade agreement',
+    'deliver a gift to an allied power',
+    'exchange prisoners with a rival power',
+    'speak at a diplomatic summit',
+    'visit an ambassador'
+]
+
+gen_data['junker_motivation'] = [
+    'harvest cocoons from bio-engineered silkworms',
+    'reclaim fuel cells from a dormant terraforming facility',
+    'retrieve a lost cache of anti-venom',
+    'strip parts from exosuits left on an old battlefield',
+    'extract blackrock from an abandoned mine',
+    'recover the neural network from a derelict cargo vessel'
+]
+
+gen_data['mercenary_motivation'] = [
+    'quell a rebellion in a newly established community',
+    'provide security for a very important person',
+    'train the troops of a developing nation',
+    'protect a mining expedition from dangerous threats',
+    'provide humanitarian assistance after a natural disaster',
+    'enforce a cease-fire between two hostile forces'
+]
+
+gen_data['merchant_motivation'] = [
+    'buy a swarm of used nanobots',
+    'sell a pair of overly chatty, refurbished construction robots',
+    'deliver a load of fuel to a stranded spacecraft',
+    'sell food and water to a recently established community',
+    'deliver medicine to treat a deadly pandemic',
+    'buy a crate of semi-legal weapons'
+]
+
+gen_data['miner_motivation'] = [
+    'blackrock from the fossilized juggernauts of Kivuli',
+    'hematite from the Red Mountains of Jangwa',
+    'fruiting bodies in the mycelial belt',
+    'titanium to build spaceships in the asteroid belt',
+    'ice to produce fresh water on Barafu',
+    'hydrocarbons on Malaika'
+]
+
+gen_data['pilgrim_motivation'] = [
+    'contemplate your sorrow at the Crimson Monoliths',
+    'inhale the divine spores of the Mycelial Belt',
+    'circumambulate the Tower of Eyes',
+    'have your code blessed at the Temple of the Great Architect',
+    'bathe in the sulfurous waters of the Black Springs',
+    'attend the recitation of the Stellar Sutras'
+]
+
+gen_data['scientist_motivation'] = [
+    'research a new species',
+    'lead an engineering project',
+    'develop a biological enhancement',
+    'translate a new language',
+    'test a nanotech device',
+    'investigate a cosmic anomaly'
+]
+
+gen_data['surveyor_motivation'] = [
+    'assess the repairability of a salvage site',
+    'measure the boundaries of a construction site',
+    'assess the mining potential of an asteroid',
+    'adjudicate a dispute in a recently settled area',
+    'map a trade route in a hostile area',
+    'scout ideal locations for terraforming equipment'
+]
+
+gen_data['teamster_motivation'] = [
+    'take your last vacation before you hit 30 years and retire',
+    'haul a tanker of water from Barafu to Kivuli',
+    'move a load of antimatter between Mwewe and Barafu',
+    'start a new job as a dock worker on Maono',
+    'work the underwater ports of Msituni',
+    'attend a union meeting on Nyumbani'
+]
 
 gen_data['homeworld'] = {
     '1': 'Maono',

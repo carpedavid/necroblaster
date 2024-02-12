@@ -1,5 +1,5 @@
 gen_data['necromancer'] = [
-    '<p>{background}</p>
+    '<p>{background}</p>'
 ]
 gen_data['background'] = [
     'You are a criminal from {homeworld}. You were going to {criminal_motivation} but {voice}. Then you heard the voice...',
